@@ -1,0 +1,26 @@
+language: c
+compiler:
+  - gcc
+
+os:
+  - linux
+
+dist:
+  - zesty
+
+sudo: true
+
+addons:
+  apt:
+    packages:
+      - pcre-dev
+      - zlib-dev
+      - openssl-dev
+
+before_install: echo before install addons.
+
+before_script: echo before script.
+
+script: echo begin execute my script.
+
+after_success: echo ok!
