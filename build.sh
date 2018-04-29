@@ -2,12 +2,17 @@
 version=1.14.0
 cd /home/travis/build/zhouchangxun
 wget http://nginx.org/download/nginx-$version.tar.gz
-tar -zxvf nginx-$version.tar.gz
+tar -zxf nginx-$version.tar.gz
+pwd;ls
 cd nginx-$version
-
+ls ../
 #patch code
 git apply ../ngx_healthcheck_module/nginx-stable-1.14+.patch
 
+#check dependency
+dpkg -l |grep libpcre3-dev
+dpkg -l|grep zlib1g-dev
+dpkg -l|grep openssl
 #build
 ./auto/configure --with-debug \
             --with-stream \
