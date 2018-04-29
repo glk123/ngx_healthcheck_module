@@ -15,12 +15,12 @@ addons:
     packages:
       - libpcre3-dev
       - zlib1g-dev
-      - openssl-dev
+      - openssl
 
 before_install: echo before install addons.
 
 before_script: echo before script.
 
-script: ./build.sh
+script: bash ./build.sh
 
 after_success: echo ok!
