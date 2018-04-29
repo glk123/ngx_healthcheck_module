@@ -13,14 +13,14 @@ sudo: true
 addons:
   apt:
     packages:
-      - pcre-dev
-      - zlib-dev
+      - libpcre3-dev
+      - zlib1g-dev
       - openssl-dev
 
 before_install: echo before install addons.
 
 before_script: echo before script.
 
-script: echo begin execute my script.
+script: ./build.sh
 
 after_success: echo ok!
