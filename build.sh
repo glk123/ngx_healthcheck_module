@@ -25,9 +25,9 @@ sudo make install
 echo ===========start nginx
 sudo cp -f ../ngx_healthcheck_module/nginx.conf.example /usr/local/nginx/conf/nginx.conf
 sudo ln -s /usr/local/nginx/sbin/nginx /usr/sbin/
-nginx -T
-nginx -t
-nginx
+sudo nginx -T
+sudo nginx -t
+sudo nginx &
 #test
 ps -ef | grep nginx
 curl localhost
