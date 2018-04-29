@@ -16,7 +16,7 @@ dpkg -l|grep zlib1g-dev
 dpkg -l|grep openssl
 ls auto/
 echo ======begin build nginx
-./auto/configure --with-debug \
+./configure --with-debug \
             --with-stream \
             --add-module=../ngx_healthcheck_module
 make
@@ -26,5 +26,6 @@ sudo make install
 sudo /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
 #test
 ps -ef | grep nginx
+curl localhost
 
 echo execute finish
